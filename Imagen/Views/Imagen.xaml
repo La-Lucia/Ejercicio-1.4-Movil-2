@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Convertidor="clr-namespace:Imagen.Converters"
+             x:Class="Imagen.Views.Imagen"
+             Title="{Binding Nombre}"
+             Background="#f7f1e1">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:ByteArrayToImage x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <StackLayout>
+                <Image Source="{Binding imagen, Converter={StaticResource ByteToImage}}" WidthRequest="450" HeightRequest="450" Margin="20" />
+                    <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="CenterAndExpand" TextColor="#855e6e"/>
+                    <Label Text="{Binding Descripcion}" HorizontalTextAlignment="Center" FontSize="Small" Margin="0" HorizontalOptions="CenterAndExpand" Padding="25"/>
+                </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

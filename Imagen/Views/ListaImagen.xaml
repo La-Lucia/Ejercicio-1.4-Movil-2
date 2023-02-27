@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Convertidor="clr-namespace:Imagen.Converters"
+             x:Class="Imagen.Views.ListaImagen"
+             Title="Imagenes"
+             Background="#f7f1e1">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:ByteArrayToImage x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+            <StackLayout Padding="10">
+                <ListView x:Name="lista" ItemTapped="lista_ItemTapped"  RowHeight="80">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding imagen, Converter={StaticResource ByteToImage}}" WidthRequest="80" HeightRequest="100" Aspect="AspectFill" />
+                                    <StackLayout>
+                                    <Label Text="{Binding Nombre}" FontSize="Medium" LineBreakMode="WordWrap" FontAttributes="Bold" TextColor="#855e6e" />
+                                        <Label Text="{Binding Descripcion}" FontSize="Small" LineBreakMode="WordWrap"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+  
+    </ContentPage.Content>
+</ContentPage>

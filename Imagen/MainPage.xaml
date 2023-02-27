@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Imagen.MainPage"
+             Title="Ejercicio 1.4"
+             Background="#f7f1e1">
+
+    <StackLayout Padding="10">
+
+        <StackLayout Padding="10">
+
+            <Image x:Name="img" HeightRequest="200" WidthRequest="200" BackgroundColor="#f7f1e1" 
+               Margin="20,0,20,0" HorizontalOptions="Center" Source="dslrcamera.png">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  NumberOfTapsRequired="1"/>
+            </Image.GestureRecognizers>
+
+        </Image>
+            
+        </StackLayout>
+
+        <Label Text="Nombre" FontSize="Default" Padding="15,20,0,0"/>
+        <Entry x:Name="Nombre" Placeholder="Ingrese un nombre" Keyboard="Default"  Margin="10,5,5,5"/>
+
+        <Label Text="Descripcion" FontSize="Default" Padding="15,20,0,0"/>
+        <Editor x:Name="Descripcion" Placeholder="Ingrese una descripcion" HeightRequest="105"  Margin="10,4,4,4"/>
+
+        <Button Text="Guardar" x:Name="BtnGuardar" Clicked="BtnGuardar_Clicked"  BackgroundColor="#ffb2c1" TextColor="White" Margin="10,5,10,5" />
+        <Button Text="Lista De Fotos" x:Name="Lista" Clicked="Lista_Clicked"  BackgroundColor="#855e6e" TextColor="White" Margin="10,5,10,5" />
+
+    </StackLayout>
+
+</ContentPage>
